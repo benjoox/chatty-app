@@ -46,7 +46,7 @@ const maxContentForIE = {
 }
 
 const container = { 
-    margin: '16px', 
+    marginBottom: '16px', 
     padding: '16px', 
     border: 'solid lightgrey 1px', 
     borderRadius: '5px',

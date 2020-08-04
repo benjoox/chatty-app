@@ -5,21 +5,23 @@ export default function TextInputBox(props) {
     const [message, setMessage] = useState('')
     
     return <div style={container}>
-        <label htmlFor='txt' />
-        <input 
-            id='txt'
-            type='text' 
-            placeholder='Message' 
-            value={message}
-            style={textBox}
-            onChange={ev => { ev.preventDefault(); setMessage(ev.target.value)}}
-        />
-        <button 
-            onClick={props.send}
-            style={button} 
-        >
-            Send
-        </button>
+        <div style={innerContainer}>
+            <label htmlFor='txt' />
+            <input 
+                id='txt'
+                type='text' 
+                placeholder='Message' 
+                value={message}
+                style={textBox}
+                onChange={ev => setMessage(ev.target.value)}
+            />
+            <button 
+                onClick={props.send}
+                style={button} 
+            >
+                Send
+            </button>
+        </div>
     </div>
 }
 
@@ -29,8 +31,16 @@ TextInputBox.protoType = {
 
 const container = {
     display: 'flex',
+    justifyContent: 'center',
     backgroundColor: 'blue',
     padding: '4px'
+}
+
+const innerContainer = {
+    display: 'flex',
+    backgroundColor: 'blue',
+    padding: '4px',
+    width: '640px'
 }
 
 const textBox = {
