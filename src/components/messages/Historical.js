@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string, number } from 'prop-types'
+import { string } from 'prop-types'
 import moment from 'moment'
 
 export default class Historical extends PureComponent {
@@ -33,16 +33,16 @@ export default class Historical extends PureComponent {
 Historical.propTypes = {
     message: string.isRequired,
     author: string.isRequired,
-    timestamp: number.isRequired
+    timestamp: string.isRequired
 }
 
 const minContentForIE = { 
     display: '-ms-grid', 
-    '-ms-grid-columns': 'min-content' 
+    msGridColumns: 'min-content' 
 }
 const maxContentForIE = { 
     display: '-ms-grid', 
-    '-ms-grid-columns': 'max-content' 
+    msGridColumns: 'max-content' 
 }
 
 const container = { 
