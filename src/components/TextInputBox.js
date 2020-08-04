@@ -3,6 +3,11 @@ import { func } from 'prop-types'
 
 export default function TextInputBox(props) {
     const [message, setMessage] = useState('')
+
+    function send() {
+        props.send(message)
+        setMessage('')
+    }
     
     return <div style={container}>
         <div style={innerContainer}>
@@ -16,7 +21,7 @@ export default function TextInputBox(props) {
                 onChange={ev => setMessage(ev.target.value)}
             />
             <button 
-                onClick={props.send}
+                onClick={send}
                 style={button} 
             >
                 Send

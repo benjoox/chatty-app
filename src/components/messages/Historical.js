@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string } from 'prop-types'
+import { string, number } from 'prop-types'
 import moment from 'moment'
 
 export default class Historical extends PureComponent {
@@ -47,7 +47,7 @@ export default class Historical extends PureComponent {
 Historical.propTypes = {
     message: string.isRequired,
     author: string.isRequired,
-    timestamp: string.isRequired
+    timestamp: number.isRequired
 }
 
 const minContentForIE = { 
