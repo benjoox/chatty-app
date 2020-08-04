@@ -1,5 +1,6 @@
 import React from 'react';
 import Historical from './components/messages/Historical'
+import TextInputBox from './components/TextInputBox'
 import './App.css';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         }
 
       </div>
+
+      <TextInputBox send={() => console.log('TODO: Implement send message functionality')} />
 
     </div>
   );
