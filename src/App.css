@@ -1,4 +1,7 @@
 
+body {
+  font-size: '1.4rem'
+}
 [contenteditable]:focus {
   outline: 0px solid transparent;
 }

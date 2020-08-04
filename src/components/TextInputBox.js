@@ -32,20 +32,20 @@ TextInputBox.protoType = {
 const container = {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: '#3798d4',
     padding: '4px'
 }
 
 const innerContainer = {
     display: 'flex',
-    backgroundColor: 'blue',
+    backgroundColor: '#3798d4',
     padding: '4px',
-    width: '640px'
+    width: '592px'
 }
 
 const textBox = {
     margin: '4px',
-    width: '80%',
+    width: '88%',
     outline: 'none',
     overflow: 'auto',
     padding: '4px',
@@ -55,11 +55,11 @@ const textBox = {
 
 const button = {
     margin: '4px',
-    backgroundColor: 'red',
+    backgroundColor: '#ff876c',
     color: 'white',
     border: 'solid 1px darkblue',
     borderRadius: '2px',
-    width: '20%',
+    width: '12%',
     cursor: 'pointer',
     boxSizing: 'content-box'
 }
