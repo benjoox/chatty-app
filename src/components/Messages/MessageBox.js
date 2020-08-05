@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { string, number } from 'prop-types'
 import moment from 'moment'
 
-export default class Historical extends PureComponent {
+export default class MessageBox extends PureComponent {
     render() {
         const { message, author, timestamp } = this.props
 
@@ -44,7 +44,7 @@ export default class Historical extends PureComponent {
     }
 }
 
-Historical.propTypes = {
+MessageBox.propTypes = {
     message: string.isRequired,
     author: string.isRequired,
     timestamp: number.isRequired
