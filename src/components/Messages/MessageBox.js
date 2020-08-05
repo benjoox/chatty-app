@@ -6,7 +6,7 @@ export default class MessageBox extends PureComponent {
     render() {
         const { message, author, timestamp } = this.props
 
-        const date = moment.unix(timestamp / 1000).format('DD MMM YYYY h:mm')
+        const date = moment.unix(timestamp / 1000).format('DD MMM YYYY H:mm')
 
         const currentUser = author === 'currentUser'
         
