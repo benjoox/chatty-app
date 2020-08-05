@@ -24,10 +24,16 @@ function Messages(props) {
                         timestamp={el.timestamp}
                     />)
                     :
+                    ''
+                }
+                { 
+                    !process.env.REACT_APP_DOODLE_API_TOKEN
+                    ?
                     <div style={note}>
                         <h4>Have you added a valid token to the .env file? </h4>
-                        <h5>If yes then start adding new messages</h5>
                     </div>
+                    :
+                    ''
                 }
                 <div ref={endOfListRef} />
             </div>
@@ -40,7 +46,7 @@ export default Messages
 const root = { 
   display: 'flex', 
   justifyContent: 'center',
-  minHeight: '150px',
+  minHeight: '100px',
   maxHeight: '590px',
   overflowY: 'scroll'
 }
