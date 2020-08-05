@@ -1,16 +1,27 @@
 import React, { useState } from 'react'
 import { func } from 'prop-types'
+import useWindowDimensions from '../../hooks/useWindowDimension.js'
+import {
+    root,
+    mContent,
+    sContent,
+    button,
+    textBox
+} from './styles'
 
 export default function TextInputBox(props) {
     const [message, setMessage] = useState('')
+    const isMedium = useWindowDimensions()
 
     function send() {
         props.send(message)
         setMessage('')
     }
-    
-    return <div style={container}>
-        <div style={innerContainer}>
+
+    const content = isMedium ? mContent : sContent
+
+    return <div style={root}>
+        <div style={content}>
             <label htmlFor='txt' />
             <input 
                 id='txt'
@@ -32,39 +43,4 @@ export default function TextInputBox(props) {
 
 TextInputBox.protoType = {
     send: func.isRequired
-}
-
-const container = {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: '#3798d4',
-    padding: '4px'
-}
-
-const innerContainer = {
-    display: 'flex',
-    backgroundColor: '#3798d4',
-    padding: '4px',
-    width: '592px'
-}
-
-const textBox = {
-    margin: '4px',
-    width: '88%',
-    outline: 'none',
-    overflow: 'auto',
-    padding: '4px',
-    borderWidth: '0',
-    borderRadius: '2px'
-}
-
-const button = {
-    margin: '4px',
-    backgroundColor: '#ff876c',
-    color: 'white',
-    border: 'solid 1px darkblue',
-    borderRadius: '2px',
-    width: '12%',
-    cursor: 'pointer',
-    boxSizing: 'content-box'
 }

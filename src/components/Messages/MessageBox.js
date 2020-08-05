@@ -1,18 +1,32 @@
 import React, { PureComponent } from 'react'
 import { string, number } from 'prop-types'
 import moment from 'moment'
+import {
+    root,
+    currentUserRoot,
+    content,
+    currentUserContent,
+    minContentForIE,
+    maxContentForIE,
+    title,
+    date,
+    currentUserDate,
+    mMessage,
+    sMessage
+} from './MessageBoxStyles'
 
 export default class MessageBox extends PureComponent {
     render() {
-        const { message, author, timestamp } = this.props
+        const { message, author, timestamp, isMedium } = this.props
 
-        const date = moment.unix(timestamp / 1000).format('DD MMM YYYY H:mm')
+        const formattedDate = moment.unix(timestamp / 1000).format('DD MMM YYYY H:mm')
 
         const currentUser = author === 'currentUser'
-        
         const rootStyle = currentUser ? currentUserRoot : root
         const contentStyle = currentUser ? currentUserContent : content
-        const dateStyle = currentUser ? currentUserLightText : lightText 
+        const dateStyle = currentUser ? currentUserDate : date 
+
+        const messageStyle = isMedium ? mMessage : sMessage
 
         return <div style={rootStyle}>
             <div style={minContentForIE}>
@@ -35,7 +49,7 @@ export default class MessageBox extends PureComponent {
                     </div>
                     <div style={maxContentForIE}>
                         <div style={dateStyle} >
-                            {date}
+                            {formattedDate}
                         </div>
                     </div>
                 </div>
@@ -48,59 +62,4 @@ MessageBox.propTypes = {
     message: string.isRequired,
     author: string.isRequired,
     timestamp: number.isRequired
-}
-
-const minContentForIE = { 
-    display: '-ms-grid', 
-    msGridColumns: 'min-content' 
-}
-const maxContentForIE = { 
-    display: '-ms-grid', 
-    msGridColumns: 'max-content' 
-}
-
-const content = {  
-    padding: '16px', 
-    border: 'solid lightgrey 1px',
-    borderRadius: '5px',
-    width: 'min-content',  
-    backgroundColor: 'white'
-}
-
-const messageStyle = {
-    lineHeight: '1.5rem',
-    width: 'max-content',
-    maxWidth: '384px'
-}
-
-const title ={
-    color: 'grey',
-    fontSize: '0.78rem'
-}
-
-const lightText = {
-    width: 'max-content',
-    color: 'grey',
-    fontSize: '0.88rem'
-}
-
-const root = {
-    marginBottom: '16px',
-}
-
-const currentUserRoot = {
-    ...root,
-    alignSelf: 'flex-end', 
-    backgroundColor: '#fcf7c6' 
-}
-
-const currentUserLightText = {
-    ...lightText,
-    width: '100%', 
-    textAlign: 'right'
-}
-
-const currentUserContent = {
-    ...content,
-    backgroundColor: '#fcf7c6'
 }
