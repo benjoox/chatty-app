@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Requirements
+#### Requirements
 
 `node > 12.16`
 
-### Getting started in development mode
+#### Getting started in development mode
 
 `git clone git@github.com:benjoox/chatty-app.git`
 
