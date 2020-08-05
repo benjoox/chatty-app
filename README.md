@@ -12,6 +12,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `npm install`
 
+`Add your token to the .env file`
+
 `npm start`
 
 Runs the app in the development mode.<br />
