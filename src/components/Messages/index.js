@@ -68,10 +68,3 @@ const sMessages = {
 const note = {
     textAlign: 'center'
 }
-
-
-
-
-
-
-

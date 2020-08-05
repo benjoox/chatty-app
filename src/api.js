@@ -12,7 +12,6 @@ async function getAllMessages() {
 }
 
 async function sendMessage(content) {
-    console.log('content is ', JSON.stringify(content))
     try {
         const response = await fetch(API_ENDPOINT, {
             method: 'POST',

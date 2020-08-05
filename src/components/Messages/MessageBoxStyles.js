@@ -43,7 +43,8 @@ export const date = {
 export const currentUserDate = {
     color: 'grey',
     fontSize: '0.88rem',
-    width: '100%', 
+    width: '100%',
+    minWidth: '130px', 
     textAlign: 'right'
 }
 

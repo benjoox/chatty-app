@@ -9,14 +9,14 @@ import './App.css';
 
 function App() {
     const [messageList, setMessages] = useState([])
-    const [user] = useState('currentUser')
+    const [user] = useState('NINJA')
     const isMedium = useWindowDimensions()
 
     useEffect(initialiseMessages, []);
 
     function initialiseMessages () {
       async function getAllMessage() {
-        const messages = await API.getLastTenMessages()
+        const messages = await API.getAllMessages()
         setMessages(messages)
       }
       getAllMessage()
@@ -27,7 +27,7 @@ function App() {
           message,
           author: user
         }) 
-        const messages = await API.getLastTenMessages()
+        const messages = await API.getAllMessages()
         setMessages(messages)
     }
 
