@@ -24,7 +24,10 @@ function Messages(props) {
                         timestamp={el.timestamp}
                     />)
                     :
-                    ''
+                    <div style={note}>
+                        <h4>Have you added a valid token to the .env file? </h4>
+                        <h5>If yes then start adding new messages</h5>
+                    </div>
                 }
                 <div ref={endOfListRef} />
             </div>
@@ -54,6 +57,10 @@ const sMessages = {
     flexDirection: 'column',  
     padding: '43px 24px 0 24px',
     width: '100%'
+}
+
+const note = {
+    textAlign: 'center'
 }
 
 
