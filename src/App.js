@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
     const [messageList, setMessages] = useState([])
-    const [user] = useState('NINJA')
+    const [user] = useState('currentUser')
     const isMedium = useWindowDimensions()
 
     useEffect(initialiseMessages, []);
