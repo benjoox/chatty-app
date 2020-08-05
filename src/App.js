@@ -9,7 +9,7 @@ function App() {
   const [messageList, setMessages] = useState([])
   useEffect(() => {
     async function getAllMessage() {
-      const messages = await API.getAllMessages()
+      const messages = await API.getLastTenMessages()
       setMessages(messages)
     }
 
@@ -26,7 +26,7 @@ function App() {
       message,
       author: "currentUser"
     }) 
-    const messages = await API.getAllMessages()
+    const messages = await API.getLastTenMessages()
     setMessages(messages)
   }
 

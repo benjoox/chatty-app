@@ -9,7 +9,6 @@ async function getAllMessages() {
     } catch (err) {
         console.error(err)
     }
-    
 }
 
 async function sendMessage(content) {
@@ -31,7 +30,19 @@ async function sendMessage(content) {
     }
 }
 
+async function getLastTenMessages() {
+    const url = `${API_ENDPOINT}/?since=${Date.now() / 1000}&limit=10&token=${API_TOKEN}`
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch(err) {
+        console.log(err)
+    }
+}
+
 export default {
     sendMessage,
-    getAllMessages
+    getAllMessages,
+    getLastTenMessages
 }
